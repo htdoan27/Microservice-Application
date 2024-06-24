@@ -1,4 +1,5 @@
 
+using IdentityModel;
 using Mango.Web.Models;
 using Mango.Web.Service.IService;
 using Mango.Web.Utility;
@@ -65,10 +66,10 @@ namespace Mango.Web.Controllers
         {
             CartDto cartDto = new CartDto()
             {
-                //CartHeader = new CartHeaderDto
-                //{
-                //    UserId = User.Claims.Where(u => u.Type == JwtClaimTypes.Subject)?.FirstOrDefault()?.Value
-                //}
+                CartHeader = new CartHeaderDto
+                {
+                    UserId = User.Claims.Where(u => u.Type == JwtClaimTypes.Subject)?.FirstOrDefault()?.Value
+                }
             };
 
             CartDetailsDto cartDetails = new CartDetailsDto()
